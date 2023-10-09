@@ -13,13 +13,13 @@ public class OptimisticLockStockFacade {
 	}
 
 	public void decrease(Long id, Long quantity) throws InterruptedException {
-		while (true){
+		while (true){ //
 			try{
-				optimisticLockService.decrease(id, quantity);
+				optimisticLockService.decrease(id, quantity); // 무한루프 얘가 성공할때까지
 
 				break;
 			}catch (Exception e){
-				Thread.sleep(50);
+				Thread.sleep(50); //충돌이 발생하면 짧은시간동안 기다린 후에 재시도하도록 한다.
 			}
 		}
 
