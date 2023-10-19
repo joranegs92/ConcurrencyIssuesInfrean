@@ -14,9 +14,12 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // https://mvnrepository.com/artifact/org.redisson/redisson-spring-boot-starter
+    implementation group: 'org.redisson', name: 'redisson-spring-boot-starter', version: '3.24.1'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter'
-
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     runtimeOnly 'mysql:mysql-connector-java'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
